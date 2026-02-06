@@ -1,27 +1,27 @@
 from vaches.domain.errors.exceptions import InvalidVacheException
 
-AGE_MAX = 25
-AGE_MINI = 0
-POIDS_MIN = 2
-POIDS_MAX = 10000
-PANSE_MAX = 50
-RENDEMENT_RUMINATION = 0.2
-
-
 class Vache:
 
-    def __init__(self, petitNom: str, age: int, poids: float):
+    AGE_MAX = 25
+    AGE_NAISSANCE = 0
+    POIDS_MIN = 2
+    POIDS_MAX = 10000
+    PANSE_MAX = 50
+    RENDEMENT_RUMINATION = 0.25
 
-        if not petitNom or petitNom.strip() == "":
+
+    def __init__(self, petit_nom: str, poids: float, age: int = AGE_NAISSANCE):
+
+        if not petit_nom or petit_nom.strip() == "":
             raise InvalidVacheException("le nom peut pas etre vide")
 
-        if age < AGE_MINI or age > AGE_MAX:
-            raise InvalidVacheException("l'age doit etre entre 0 et 25 ans")
-
-        if poids < POIDS_MIN:
+        if poids < Vache.POIDS_MIN:
             raise InvalidVacheException("erreur dans le poids")
 
-        self.petitNom = petitNom
+        if age < Vache.AGE_NAISSANCE or age > Vache.AGE_MAX:
+            raise InvalidVacheException("l'âge doit être entre 0 et 25 ans")
+
+        self.petit_nom = petit_nom
         self.poids = poids
         self.age = age
         self.panse = 0
@@ -48,8 +48,7 @@ class Vache:
         self.poids += gain
         self.panse = 0.0
 
-    def veillir(self):
+    def vieillir(self):
         if self.age >= Vache.AGE_MAX:
             raise InvalidVacheException('')
-
         self.age += 1
