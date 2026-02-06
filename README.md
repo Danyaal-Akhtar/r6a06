@@ -222,3 +222,4 @@ Voir document acoompagnant le sujet.
 | `VacheALait` | `RENDEMENT_LAIT` | `1.1` | litres produits par kg ruminé (λ) |
 | `PieNoire` | `COEFFICIENT_LAIT_PAR_NOURRITURE` | *(dict)* | coefficient lait par `TypeNourriture` (μ) |
 
+# r6a06
