@@ -223,3 +223,4 @@ Voir document acoompagnant le sujet.
 | `PieNoire` | `COEFFICIENT_LAIT_PAR_NOURRITURE` | *(dict)* | coefficient lait par `TypeNourriture` (μ) |
 
 # r6a06
+# r6a06
